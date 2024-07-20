@@ -56,11 +56,13 @@ class _MainScreenState extends State<MainScreen> {
       children: [
         Text(
           title,
-          style: textTheme.titleLarge?.copyWith(
+          style: GoogleFonts.ubuntu(
+            textStyle: TextStyle(
             color: colorScheme.onSurface,
             fontSize: 25.0,
             fontWeight: FontWeight.bold,
           ),
+        ),
         ),
         Icon(
           icon,
@@ -310,10 +312,10 @@ class TaskTile extends StatelessWidget {
       child: ListTile(
         title: Text(
           task.title,
-         style: GoogleFonts.oswald(
+         style: GoogleFonts.ubuntu(
                 textStyle: TextStyle(
                 color: Colors.grey[800],
-                fontWeight: FontWeight.bold,
+                fontWeight: FontWeight.w500,
                 fontSize: 20,
               ),
             ),
@@ -323,7 +325,7 @@ class TaskTile extends StatelessWidget {
           children: [
             Text(
               task.category,
-              style: GoogleFonts.oswald(
+              style: GoogleFonts.ubuntu(
                 textStyle: TextStyle(
                 color: Colors.black,
                 fontWeight: FontWeight.bold,
@@ -334,11 +336,11 @@ class TaskTile extends StatelessWidget {
             const SizedBox(height: 4.0),
             Text(
               task.time,
-             style: GoogleFonts.oswald(
+             style: GoogleFonts.ubuntu(
                 textStyle: TextStyle(
                 color: Colors.grey,
                 fontWeight: FontWeight.bold,
-                fontSize: 20,
+                fontSize: 18,
               ),
             ),
             ),
