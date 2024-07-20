@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/Models/ButtonGroup.dart';
 import 'package:flutter_application_1/Navigations/ProjectPage/PrrojectsViewModel.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:stacked/stacked.dart';
 import 'ProjectList.dart';  
 
 class ProjectsPage extends StatelessWidget {
+  const ProjectsPage({super.key});
+
   @override
   Widget build(BuildContext context) {
     return ViewModelBuilder<ProjectsViewModel>.reactive(
@@ -26,11 +29,14 @@ class ProjectsPage extends StatelessWidget {
             ),
             title: Text(
               'Projects',
-              style: themeData.textTheme.titleLarge!.copyWith(
-                letterSpacing: 1,
-                fontWeight: FontWeight.bold,
+              style: GoogleFonts.ubuntu(
+            textStyle: TextStyle(
+              fontSize: 35,
+              fontWeight: FontWeight.bold,
+              color: themeData.colorScheme.onSecondary,
+            )
+          ),
               ),
-            ),
             actions: [
               Padding(
                 padding: EdgeInsets.only(right: 10),
@@ -46,17 +52,18 @@ class ProjectsPage extends StatelessWidget {
           body: Column(
             children: [
               Padding(
-                padding: const EdgeInsets.all(10.0),
+                padding: const EdgeInsets.all(15.0),
                 child: TextField(
                   decoration: InputDecoration(
                     hintText: 'Search',
-                    prefixIcon: Icon(Icons.search, color: themeData.iconTheme.color),
-                    hintStyle: themeData.textTheme.titleMedium!.copyWith(
+                    prefixIcon: Icon(Icons.search, color: Colors.grey),
+                    hintStyle: TextStyle(
+                      color: Colors.grey,
                       fontWeight: FontWeight.bold,
                     ),
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(15),
-                      borderSide: BorderSide(color: themeData.dividerColor),
+                      borderSide: BorderSide(color: Colors.grey[600]!),
                     ),
                   ),
                   onChanged: (value) => model.search(value),
