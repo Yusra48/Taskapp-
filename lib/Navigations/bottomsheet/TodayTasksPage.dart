@@ -32,19 +32,30 @@ class _TodayTasksPageState extends State<TodayTasksPage> {
         'title': 'Meeting with team',
         'time': '10:00 AM - 11:00 Am',
         'color': '#FF5733',
-        'participants': ['https://cdn.pixabay.com/photo/2024/07/09/13/48/beautiful-girl-8883604_640.jpg', 'https://cdn.pixabay.com/photo/2024/06/13/05/31/men-8826710_640.jpg']
+        'participants': [
+          'https://cdn.pixabay.com/photo/2024/07/09/13/48/beautiful-girl-8883604_640.jpg',
+          'https://cdn.pixabay.com/photo/2024/06/13/05/31/men-8826710_640.jpg'
+        ]
       },
       {
         'title': 'Project deadline',
         'time': '5:40 PM - 8:40AM ',
         'color': '#33FF57',
-        'participants': ['https://cdn.pixabay.com/photo/2019/08/11/11/28/man-4398724_640.jpg','https://cdn.pixabay.com/photo/2024/06/25/13/12/woman-8852672_640.jpg']
+        'participants': [
+          'https://cdn.pixabay.com/photo/2019/08/11/11/28/man-4398724_640.jpg',
+          'https://cdn.pixabay.com/photo/2024/06/25/13/12/woman-8852672_640.jpg'
+        ]
       },
       {
         'title': 'Lunch with Team',
         'time': '2:20 PM - 3:20 PM',
         'color': '#3357FF',
-        'participants': ['https://cdn.pixabay.com/photo/2024/07/09/13/48/beautiful-girl-8883604_640.jpg', 'https://cdn.pixabay.com/photo/2024/06/13/05/31/men-8826710_640.jpg','https://cdn.pixabay.com/photo/2019/08/11/11/28/man-4398724_640.jpg','https://cdn.pixabay.com/photo/2024/05/12/16/13/ai-generated-8757269_640.png',]
+        'participants': [
+          'https://cdn.pixabay.com/photo/2024/07/09/13/48/beautiful-girl-8883604_640.jpg',
+          'https://cdn.pixabay.com/photo/2024/06/13/05/31/men-8826710_640.jpg',
+          'https://cdn.pixabay.com/photo/2019/08/11/11/28/man-4398724_640.jpg',
+          'https://cdn.pixabay.com/photo/2024/05/12/16/13/ai-generated-8757269_640.png',
+        ]
       }
     ];
 
@@ -95,8 +106,7 @@ class _TodayTasksPageState extends State<TodayTasksPage> {
   Widget _buildCreateButton() {
     return IconButton(
       icon: const Icon(Icons.create, color: Colors.black),
-      onPressed: () {
-      },
+      onPressed: () {},
     );
   }
 
@@ -154,7 +164,7 @@ class _TodayTasksPageState extends State<TodayTasksPage> {
 
   Widget _buildTaskCount() {
     return Text(
-      '15 tasks Today', 
+      '15 tasks Today',
       style: GoogleFonts.ubuntu(
         textStyle: const TextStyle(
           fontSize: 20,
@@ -187,7 +197,8 @@ class _TodayTasksPageState extends State<TodayTasksPage> {
               width: 60,
               margin: const EdgeInsets.symmetric(horizontal: 8),
               decoration: BoxDecoration(
-                color: isSelected ? Colors.deepPurpleAccent : Colors.transparent,
+                color:
+                    isSelected ? Colors.deepPurpleAccent : Colors.transparent,
                 shape: BoxShape.rectangle,
                 borderRadius: BorderRadius.circular(15),
                 border: Border.all(color: Colors.grey[50]!),
@@ -223,7 +234,7 @@ class _TodayTasksPageState extends State<TodayTasksPage> {
       future: _loadEvents(),
       builder: (context, snapshot) {
         if (snapshot.connectionState == ConnectionState.waiting) {
-          return Center(child: CircularProgressIndicator());
+          return Center(child: CircularProgressIndicator(color: Colors.deepPurpleAccent,));
         } else if (snapshot.hasError) {
           return Center(child: Text('Error: ${snapshot.error}'));
         } else if (!snapshot.hasData || snapshot.data!.isEmpty) {
@@ -233,7 +244,9 @@ class _TodayTasksPageState extends State<TodayTasksPage> {
             itemCount: snapshot.data!.length,
             itemBuilder: (context, index) {
               final event = snapshot.data![index];
-              return EventTile(event: event);
+              return Padding(padding: EdgeInsets.only(left: 60),
+              child: EventTile(event: event),
+              );
             },
           );
         }
@@ -249,14 +262,17 @@ class _TodayTasksPageState extends State<TodayTasksPage> {
         return [];
       }
 
-      return querySnapshot.docs.map((doc) {
-        try {
-          return Event.fromDocument(doc.data() as Map<String, dynamic>);
-        } catch (e) {
-          print('Error processing document ${doc.id}: $e');
-          return null;
-        }
-      }).whereType<Event>().toList();
+      return querySnapshot.docs
+          .map((doc) {
+            try {
+              return Event.fromDocument(doc.data() as Map<String, dynamic>);
+            } catch (e) {
+              print('Error processing document ${doc.id}: $e');
+              return null;
+            }
+          })
+          .whereType<Event>()
+          .toList();
     } on FirebaseException catch (e) {
       print('Firebase error loading events: ${e.message}');
       return [];
