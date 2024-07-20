@@ -28,13 +28,13 @@ class _HomeViewState extends State<HomeView> {
     final textTheme = themeData.textTheme;
 
     return Scaffold(
-      backgroundColor: colorScheme.background,
+      backgroundColor: colorScheme.surface,
       appBar: AppBar(
         backgroundColor: colorScheme.surface,
         leading: Container(
           decoration: BoxDecoration(
             shape: BoxShape.circle,
-            border: Border.all(color: colorScheme.outline),
+            border: Border.all(color: Colors.grey[50]!),
           ),
           child: IconButton(
             icon: Icon(
@@ -132,12 +132,12 @@ class _HomeViewState extends State<HomeView> {
     return BottomNavigationBar(
       backgroundColor: colorScheme.surface,
       type: BottomNavigationBarType.fixed,
-      selectedItemColor: themeData.colorScheme.primary,
-      unselectedItemColor: themeData.colorScheme.onSurface,
+      selectedItemColor: Colors.deepPurpleAccent,
+      unselectedItemColor:Colors.grey[800],
       showSelectedLabels: true,
       showUnselectedLabels: true,
-      selectedLabelStyle: TextStyle(color: themeData.colorScheme.primary),
-      unselectedLabelStyle: TextStyle(color: themeData.colorScheme.onSurface),
+      selectedLabelStyle: TextStyle(color: Colors.deepPurpleAccent),
+      unselectedLabelStyle: TextStyle(color: Colors.grey),
       currentIndex: _currentIndex,
       onTap: (index) {
         setState(() {
@@ -156,9 +156,9 @@ class _HomeViewState extends State<HomeView> {
         ),
         BottomNavigationBarItem(
           icon: CircleAvatar(
-            backgroundColor: themeData.colorScheme.primary,
+            backgroundColor:Colors.deepPurpleAccent,
             child: Icon(CupertinoIcons.add, color: Colors.white),
-            radius: 20,
+            radius: 25,
           ),
           label: 'Add',
         ),
@@ -214,7 +214,7 @@ class _HomeViewState extends State<HomeView> {
 
     showModalBottomSheet(
       context: context,
-      backgroundColor: colorScheme.background,
+      backgroundColor: colorScheme.surface,
       shape: const RoundedRectangleBorder(
         borderRadius: BorderRadius.vertical(top: Radius.circular(25.0)),
       ),
@@ -248,7 +248,7 @@ class _HomeViewState extends State<HomeView> {
               child: ElevatedButton(
                 onPressed: () => Navigator.pop(context),
                 style: ElevatedButton.styleFrom(
-                  backgroundColor: themeData.colorScheme.primary,
+                  backgroundColor:Colors.deepPurpleAccent,
                   shape: const CircleBorder(),
                   padding: const EdgeInsets.all(16),
                 ),
