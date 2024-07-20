@@ -78,7 +78,7 @@ class _OnBoardingPage2State extends State<OnBoardingPage2> {
                 style: TextStyle(
                   fontSize: 25,
                   fontWeight: FontWeight.w800,
-                  color: primaryColor, 
+                  color: Colors.deepPurpleAccent, 
                 ),
               ),
             ),
@@ -118,7 +118,7 @@ class _OnBoardingPage2State extends State<OnBoardingPage2> {
                       style: TextStyle(
                         fontSize: 22,
                         fontWeight: FontWeight.bold,
-                        color: themeData.textTheme.labelLarge?.color, 
+                        color: Colors.grey, 
                       ),
                     ),
                   ),
@@ -128,7 +128,7 @@ class _OnBoardingPage2State extends State<OnBoardingPage2> {
                   child: ElevatedButton(
                     onPressed: _navigateToNextPage,
                     style: ElevatedButton.styleFrom(
-                      backgroundColor: primaryColor, 
+                      backgroundColor: Colors.deepPurpleAccent, 
                       shape: CircleBorder(),
                       padding: EdgeInsets.all(15),
                       minimumSize: Size(60, 60),
