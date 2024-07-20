@@ -31,10 +31,10 @@ class _ButtonGroupState extends State<ButtonGroup> {
           Container(
             decoration: BoxDecoration(
               shape: BoxShape.circle,
-              color: themeData.colorScheme.background,
-              border: Border.all(color: buttonBorderColor),
+              color: themeData.colorScheme.surface,
+              border: Border.all(color: Colors.grey[50]!),
             ),
-            child: Icon(CupertinoIcons.qrcode, color: themeData.iconTheme.color, size: 30),
+            child: Icon(CupertinoIcons.qrcode, color: Colors.black, size: 30),
           ),
         ],
       ),
@@ -52,8 +52,8 @@ class _ButtonGroupState extends State<ButtonGroup> {
 
     return ElevatedButton(
       style: ElevatedButton.styleFrom(
-        foregroundColor: isSelected ? onPrimaryColor : textColor,
-        backgroundColor: isSelected ? primaryColor : primaryColor,
+        foregroundColor: isSelected ? Colors.black: Colors.white,
+        backgroundColor: isSelected ? Colors.deepPurpleAccent: Colors.grey[400],
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(30),
           side: BorderSide(
