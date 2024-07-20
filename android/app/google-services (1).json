@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "133424485738",
+    "firebase_url": "https://taskapp-64aca-default-rtdb.firebaseio.com",
+    "project_id": "taskapp-64aca",
+    "storage_bucket": "taskapp-64aca.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:133424485738:android:aab3245c23f41a7a9dc113",
+        "android_client_info": {
+          "package_name": "com.example.flutter_application_1"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDB0X0xGAf7OVH_ah2kXMVWjGNzgRbQN6c"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
