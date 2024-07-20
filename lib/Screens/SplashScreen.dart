@@ -13,12 +13,12 @@ class SplashScreen extends StatelessWidget {
     final themeData = themeProvider.themeData;
 
     return Scaffold(
-      backgroundColor: themeData.colorScheme.surface, 
+      backgroundColor: Colors.deepPurple[300],
       body: SafeArea(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            Container(
+            SizedBox(
               width: double.infinity,
               height: 290,
               child: Stack(
@@ -33,9 +33,9 @@ class SplashScreen extends StatelessWidget {
                     top: 10,
                     left: 10,
                     child: ImageIcon(
-                      AssetImage('assets/Layer.png'),
+                      const AssetImage('assets/Layer.png'),
                       size: 40,
-                      color: themeData.iconTheme.color, 
+                      color: themeData.iconTheme.color,
                     ),
                   ),
                 ],
@@ -44,8 +44,8 @@ class SplashScreen extends StatelessWidget {
             Expanded(
               child: Container(
                 decoration: BoxDecoration(
-                  color: themeData.colorScheme.surface, 
-                  borderRadius: BorderRadius.only(
+                  color: themeData.colorScheme.surface,
+                  borderRadius: const BorderRadius.only(
                     topLeft: Radius.circular(20),
                     topRight: Radius.circular(20),
                   ),
@@ -59,24 +59,23 @@ class SplashScreen extends StatelessWidget {
                         child: Image.asset('assets/Slider.png', width: 150),
                       ),
                     ),
-                    Align(
-                      alignment: Alignment.center,
+                  Padding(padding: EdgeInsets.only(top:30),
                       child: Column(
                         mainAxisSize: MainAxisSize.min,
                         children: [
                           Text(
                             'Taskey',
                             style: GoogleFonts.bonaNova(
-                              textStyle: TextStyle(
+                              textStyle: const TextStyle(
                                 fontSize: 40,
                                 letterSpacing: 2,
                                 fontWeight: FontWeight.bold,
-                                color: themeData.colorScheme.primary, 
+                                color: Colors.deepPurpleAccent,
                               ),
                             ),
                             textAlign: TextAlign.center,
                           ),
-                          SizedBox(height: 10),
+                          const SizedBox(height: 10),
                           Text(
                             'Building Better Workplaces',
                             style: GoogleFonts.bonaNova(
@@ -88,7 +87,7 @@ class SplashScreen extends StatelessWidget {
                             ),
                             textAlign: TextAlign.center,
                           ),
-                          SizedBox(height: 10),
+                          const SizedBox(height: 10),
                           Padding(
                             padding: const EdgeInsets.symmetric(horizontal: 20),
                             child: Text(
@@ -97,7 +96,7 @@ class SplashScreen extends StatelessWidget {
                                 textStyle: TextStyle(
                                   fontSize: 22,
                                   fontWeight: FontWeight.normal,
-                                  color: themeData.textTheme.bodyLarge?.color, 
+                                  color: themeData.textTheme.bodyLarge?.color,
                                 ),
                               ),
                               textAlign: TextAlign.center,
@@ -120,11 +119,11 @@ class SplashScreen extends StatelessWidget {
                           );
                         },
                         style: ElevatedButton.styleFrom(
-                          backgroundColor: themeData.colorScheme.secondary, 
+                          backgroundColor: Colors.deepPurpleAccent,
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(10),
                           ),
-                          padding: EdgeInsets.symmetric(vertical: 15),
+                          padding: const EdgeInsets.symmetric(vertical: 15),
                         ),
                         child: Text(
                           'Get Started',
