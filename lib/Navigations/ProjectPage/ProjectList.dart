@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/Navigations/ProjectPage/PrrojectsViewModel.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 
 class ProjectList extends StatelessWidget {
@@ -34,7 +35,7 @@ class ProjectTile extends StatelessWidget {
         color: themeData.colorScheme.surface,
         shape: BoxShape.rectangle,
         borderRadius: BorderRadius.circular(15),
-        border: Border.all(color: themeData.dividerColor),
+        border: Border.all(color: Colors.grey[500]!),
       ),
       margin: EdgeInsets.symmetric(vertical: 8.0, horizontal: 16.0),
       child: Padding(
@@ -44,20 +45,25 @@ class ProjectTile extends StatelessWidget {
           children: [
             Text(
               project.title,
-              style: themeData.textTheme.titleMedium!.copyWith(
-                fontWeight: FontWeight.bold,
-                fontSize: 22,
-                color: themeData.textTheme.titleMedium!.color,
-              ),
+              style:GoogleFonts.ubuntu(
+            textStyle: TextStyle(
+              fontSize: 25,
+              fontWeight: FontWeight.bold,
+              color: Colors.black,
+            )
+          ),
               overflow: TextOverflow.ellipsis,
             ),
             SizedBox(height: 4.0),
             Text(
               project.category,
-              style: themeData.textTheme.bodyMedium!.copyWith(
-                fontSize: 20,
-                color: themeData.textTheme.bodyMedium!.color,
-              ),
+              style:GoogleFonts.ubuntu(
+            textStyle: TextStyle(
+              fontSize: 20,
+              fontWeight: FontWeight.bold,
+              color: Colors.grey,
+            )
+          ),
               overflow: TextOverflow.ellipsis,
             ),
             SizedBox(height: 8.0),
