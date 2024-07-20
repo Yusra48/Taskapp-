@@ -22,6 +22,7 @@ class _OnBoardingPage3State extends State<OnBoardingPage3> {
   Widget build(BuildContext context) {
     final themeProvider = Provider.of<ThemeProvider>(context);
     final themeData = themeProvider.themeData;
+    final Color onPrimaryColor = themeData.colorScheme.onPrimary;
 
     return Scaffold(
       backgroundColor: themeData.colorScheme.surface, 
@@ -67,7 +68,7 @@ class _OnBoardingPage3State extends State<OnBoardingPage3> {
                 ),
               ],
             ),
-            SizedBox(height: 10),
+            const SizedBox(height: 10),
             Padding(
               padding: const EdgeInsets.only(left: 20),
               child: Text(
@@ -75,11 +76,11 @@ class _OnBoardingPage3State extends State<OnBoardingPage3> {
                 style: TextStyle(
                   fontSize: 25,
                   fontWeight: FontWeight.w800,
-                  color: themeData.colorScheme.primary, 
+                  color:Colors.deepPurpleAccent, 
                 ),
               ),
             ),
-            SizedBox(height: 10),
+            const SizedBox(height: 10),
             Padding(
               padding: const EdgeInsets.only(left: 20, right: 100),
               child: Text(
@@ -92,7 +93,7 @@ class _OnBoardingPage3State extends State<OnBoardingPage3> {
                 ),
               ),
             ),
-            SizedBox(height: 10),
+            const SizedBox(height: 10),
             Padding(
               padding: const EdgeInsets.only(left: 20),
               child: Image.asset(
@@ -100,7 +101,7 @@ class _OnBoardingPage3State extends State<OnBoardingPage3> {
                 width: 150,
               ),
             ),
-            SizedBox(height: 10),
+            const SizedBox(height: 10),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
@@ -115,7 +116,7 @@ class _OnBoardingPage3State extends State<OnBoardingPage3> {
                       style: TextStyle(
                         fontSize: 22,
                         fontWeight: FontWeight.bold,
-                        color: themeData.textTheme.labelLarge?.color, 
+                        color: Colors.grey, 
                       ),
                     ),
                   ),
@@ -125,15 +126,15 @@ class _OnBoardingPage3State extends State<OnBoardingPage3> {
                   child: ElevatedButton(
                     onPressed: _navigateToNextPage,
                     style: ElevatedButton.styleFrom(
-                      backgroundColor: themeData.colorScheme.secondary,
-                      shape: CircleBorder(),
-                      padding: EdgeInsets.all(15),
-                      minimumSize: Size(60, 60),
+                      backgroundColor: Colors.deepPurpleAccent,
+                      shape: const CircleBorder(),
+                      padding: const EdgeInsets.all(15),
+                      minimumSize: const Size(60, 60),
                     ),
                     child: Icon(
                       Icons.arrow_forward,
                       size: 30,
-                      color: themeData.colorScheme.onSecondary,
+                      color: onPrimaryColor,
                     ),
                   ),
                 ),
