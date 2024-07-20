@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 
 class MainScreen extends StatefulWidget {
@@ -63,7 +64,7 @@ class _MainScreenState extends State<MainScreen> {
         ),
         Icon(
           icon,
-          color: colorScheme.primary,
+          color:Colors.deepPurple,
           size: 25,
         ),
       ],
@@ -75,7 +76,7 @@ class _MainScreenState extends State<MainScreen> {
       width: 370,
       height: 200,
       decoration: BoxDecoration(
-        color: colorScheme.primary,
+        color: Colors.deepPurpleAccent,
         shape: BoxShape.rectangle,
         borderRadius: BorderRadius.circular(16.0),
       ),
@@ -86,20 +87,24 @@ class _MainScreenState extends State<MainScreen> {
           children: [
             Text(
               'Application Design',
-              style: textTheme.titleLarge?.copyWith(
-                color: colorScheme.onPrimary,
-                fontSize: 25,
+             style: GoogleFonts.ubuntu(
+                textStyle: TextStyle(
+                color: Colors.white,
                 fontWeight: FontWeight.bold,
+                fontSize: 25,
               ),
+            ),
             ),
             const SizedBox(height: 8.0),
             Text(
               'UI Design Kit',
-              style: textTheme.titleMedium?.copyWith(
-                color: colorScheme.onPrimary.withOpacity(0.7),
-                fontSize: 16,
-                fontWeight: FontWeight.normal,
+             style: GoogleFonts.ubuntu(
+                textStyle: TextStyle(
+                color: Colors.grey[100],
+                fontWeight: FontWeight.bold,
+                fontSize: 20,
               ),
+            ),
             ),
             const SizedBox(height: 16.0),
             Row(
@@ -132,7 +137,7 @@ class _MainScreenState extends State<MainScreen> {
       width: 370,
       height: 200,
       decoration: BoxDecoration(
-        color: colorScheme.secondary,
+        color: Colors.teal[200],
         shape: BoxShape.rectangle,
         borderRadius: BorderRadius.circular(16.0),
       ),
@@ -143,20 +148,24 @@ class _MainScreenState extends State<MainScreen> {
           children: [
             Text(
               'Overlay Creative Project',
-              style: textTheme.titleLarge?.copyWith(
-                color: colorScheme.onSecondary,
-                fontSize: 25,
+              style: GoogleFonts.ubuntu(
+                textStyle: TextStyle(
+                color: Colors.white,
                 fontWeight: FontWeight.bold,
+                fontSize: 25,
               ),
+            ),
             ),
             const SizedBox(height: 8.0),
             Text(
               'Artistic Vision',
-              style: textTheme.titleMedium?.copyWith(
-                color: colorScheme.onSecondary.withOpacity(0.7),
-                fontSize: 16,
-                fontWeight: FontWeight.normal,
+             style: GoogleFonts.ubuntu(
+                textStyle: TextStyle(
+                color: Colors.grey[100],
+                fontWeight: FontWeight.bold,
+                fontSize: 24,
               ),
+            ),
             ),
             const SizedBox(height: 16.0),
             Row(
@@ -200,20 +209,24 @@ class _MainScreenState extends State<MainScreen> {
             children: [
               Text(
                 'Progress',
-                style: textTheme.titleMedium?.copyWith(
-                  color: colorScheme.onSurface.withOpacity(0.7),
-                  fontWeight: FontWeight.bold,
-                  fontSize: 18,
-                ),
+              style: GoogleFonts.ubuntu(
+                textStyle: TextStyle(
+                color: Colors.grey,
+                fontWeight: FontWeight.bold,
+                fontSize: 18,
+              ),
+            ),
               ),
               Text(
                 '50/80',
-                style: textTheme.titleMedium?.copyWith(
-                  color: colorScheme.onSurface,
-                  fontWeight: FontWeight.bold,
-                  fontSize: 18,
-                ),
+               style: GoogleFonts.ubuntu(
+                textStyle: TextStyle(
+                color: Colors.white,
+                fontWeight: FontWeight.bold,
+                fontSize: 18,
               ),
+            ),
+              )
             ],
           ),
           const SizedBox(height: 16.0),
@@ -228,7 +241,7 @@ class _MainScreenState extends State<MainScreen> {
               child: LinearProgressIndicator(
                 value: 50 / 80,
                 backgroundColor: colorScheme.onSurface.withOpacity(0.2),
-                color: colorScheme.onSurface,
+                color: Colors.white,
               ),
             ),
           ),
@@ -297,45 +310,51 @@ class TaskTile extends StatelessWidget {
       child: ListTile(
         title: Text(
           task.title,
-          style: textTheme.titleMedium?.copyWith(
-            color: colorScheme.onSurface,
-            fontWeight: FontWeight.bold,
-            fontSize: 18,
-          ),
+         style: GoogleFonts.oswald(
+                textStyle: TextStyle(
+                color: Colors.grey[800],
+                fontWeight: FontWeight.bold,
+                fontSize: 20,
+              ),
+            ),
         ),
         subtitle: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
               task.category,
-              style: textTheme.bodyLarge?.copyWith(
-                color: colorScheme.onSurface,
+              style: GoogleFonts.oswald(
+                textStyle: TextStyle(
+                color: Colors.black,
                 fontWeight: FontWeight.bold,
                 fontSize: 20,
               ),
             ),
+            ),
             const SizedBox(height: 4.0),
             Text(
               task.time,
-              style: textTheme.bodyMedium?.copyWith(
-                color: colorScheme.onSurface.withOpacity(0.7),
+             style: GoogleFonts.oswald(
+                textStyle: TextStyle(
+                color: Colors.grey,
                 fontWeight: FontWeight.bold,
-                fontSize: 18,
+                fontSize: 20,
               ),
+            ),
             ),
           ],
         ),
         contentPadding: const EdgeInsets.only(bottom: 40),
         trailing: SizedBox(
           width: 120,
-          height: 100,
+          height: 120,
           child: Stack(
             alignment: Alignment.center,
             children: [
               CircularProgressIndicator(
                 value: task.percentage,
                 strokeWidth: 7,
-                valueColor: AlwaysStoppedAnimation<Color>(colorScheme.primary),
+                valueColor: AlwaysStoppedAnimation<Color>(Colors.deepPurple),
                 backgroundColor: colorScheme.onSurface.withOpacity(0.2),
               ),
               Text(
