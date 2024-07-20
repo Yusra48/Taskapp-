@@ -7,6 +7,8 @@ import 'package:provider/provider.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
 class SignUpView extends StatefulWidget {
+  const SignUpView({super.key});
+
   @override
   _SignUpViewState createState() => _SignUpViewState();
 }
@@ -30,15 +32,15 @@ class _SignUpViewState extends State<SignUpView> {
             color: themeData.iconTheme.color, size: 40),
         title: Text(
           'Sign Up',
-          style: TextStyle(
-            letterSpacing: 1.5,
-            fontSize: 30,
-            fontWeight: FontWeight.bold,
-            color: themeData.colorScheme.onSurface,
+          style: GoogleFonts.ubuntu(
+            textStyle: TextStyle(
+              fontSize: 35,
+              fontWeight: FontWeight.bold,
+              color: themeData.colorScheme.onSecondary,
+            )
           ),
         ),
         centerTitle: true,
-        backgroundColor: themeData.colorScheme.primary,
       ),
       body: Padding(
         padding: const EdgeInsets.all(20),
@@ -56,7 +58,7 @@ class _SignUpViewState extends State<SignUpView> {
                 ),
               ),
             ),
-            SizedBox(height: 5),
+            const SizedBox(height: 5),
             Padding(
               padding: const EdgeInsets.only(right: 100),
               child: Text(
@@ -68,31 +70,31 @@ class _SignUpViewState extends State<SignUpView> {
                 ),
               ),
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             _buildTextField(
               controller: _emailController,
               hintText: 'Enter Your Email address',
               isObscure: false,
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             _buildTextField(
               controller: _passwordController,
               hintText: 'Enter Your Password',
               isObscure: true,
             ),
-            SizedBox(height: 10),
+            const SizedBox(height: 10),
             _buildTextField(
               controller: _passwordConfirmController,
               hintText: 'Confirm Your Password',
               isObscure: true,
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 10),
             if (_errorMessage != null)
               Padding(
                 padding: const EdgeInsets.only(bottom: 10),
                 child: Text(
                   _errorMessage!,
-                  style: TextStyle(
+                  style: const TextStyle(
                     color: Colors.red,
                     fontSize: 16,
                   ),
@@ -103,7 +105,7 @@ class _SignUpViewState extends State<SignUpView> {
               height: 50,
               child: ElevatedButton(
                 style: ElevatedButton.styleFrom(
-                  backgroundColor: themeData.colorScheme.secondary,
+                  backgroundColor: Colors.deepPurpleAccent,
                   shadowColor: Colors.grey[800],
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(10),
@@ -120,27 +122,27 @@ class _SignUpViewState extends State<SignUpView> {
                 ),
               ),
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 10),
             Center(
               child: Text(
                 'Sign up with',
                 style: TextStyle(
                   fontSize: 20,
                   fontWeight: FontWeight.normal,
-                  color: themeData.textTheme.bodyLarge?.color,
+                  color: Colors.grey,
                 ),
               ),
             ),
-            SizedBox(height: 5),
+            const SizedBox(height: 5),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Image.asset('assets/Google.png', height: 40),
-                SizedBox(width: 20),
-                Image.asset('assets/Apple.png', height: 40),
+                Image.asset('assets/Google.png', height: 30),
+                const SizedBox(width: 20),
+                Image.asset('assets/Apple.png', height: 30),
               ],
             ),
-            SizedBox(height: 5),
+            const SizedBox(height: 5),
             Center(
               child: TextButton(
                 child: Text(
@@ -148,7 +150,7 @@ class _SignUpViewState extends State<SignUpView> {
                   style: TextStyle(
                     fontSize: 16,
                     fontWeight: FontWeight.normal,
-                    color: themeData.primaryColor,
+                    color: Colors.blue,
                   ),
                 ),
                 onPressed: () {
@@ -216,7 +218,7 @@ class _SignUpViewState extends State<SignUpView> {
       );
       Navigator.pushReplacement(
         context,
-        MaterialPageRoute(builder: (context) => HomeView()),
+        MaterialPageRoute(builder: (context) => const HomeView()),
       );
     } catch (e) {
       setState(() {
