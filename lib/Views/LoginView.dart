@@ -27,7 +27,13 @@ class _LoginViewState extends State<LoginView> {
         leading: Icon(Icons.arrow_back_ios_new_rounded, color: themeData.iconTheme.color, size: 40),
         title: Text(
           'Sign In',
-          style: themeData.appBarTheme.titleTextStyle,
+          style: GoogleFonts.ubuntu(
+            textStyle: TextStyle(
+              fontSize: 35,
+              fontWeight: FontWeight.bold,
+              color: themeData.colorScheme.onSecondary,
+            )
+          ),
         ),
         centerTitle: true,
         backgroundColor: themeData.appBarTheme.backgroundColor,
@@ -105,7 +111,7 @@ class _LoginViewState extends State<LoginView> {
               width: double.infinity,
               child: ElevatedButton(
                 style: ElevatedButton.styleFrom(
-                  backgroundColor: themeData.colorScheme.secondary,
+                  backgroundColor:Colors.deepPurpleAccent,
                   shadowColor: themeData.shadowColor,
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(10),
@@ -128,7 +134,7 @@ class _LoginViewState extends State<LoginView> {
                 style: TextStyle(
                   fontSize: 20,
                   fontWeight: FontWeight.normal,
-                  color: themeData.textTheme.bodyLarge?.color,
+                  color: Colors.grey,
                 ),
               ),
             ),
@@ -155,7 +161,7 @@ class _LoginViewState extends State<LoginView> {
                   style: TextStyle(
                     fontSize: 16,
                     fontWeight: FontWeight.normal,
-                    color: themeData.primaryColor,
+                    color: Colors.blue,
                   ),
                 ),
               ),
